@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Get Links",
+  "description": "Get all the links in a website",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "hello_img.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content-scripts.js"
+      ],
+      "matches": [
+        "https://*.apurva-mishra.com/*"
+      ]
+    }
+  ]
+}
