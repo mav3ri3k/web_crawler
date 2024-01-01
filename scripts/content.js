@@ -5,6 +5,7 @@ console.log("Get Links script loaded!");
 const href = document.querySelectorAll("a");
 
 function sendMessage(item) {
+  // item if sent to service-worker
   if (!item.href.trim().includes("google")) {
     port.postMessage({link: item.href.trim()})
     console.log(item.href.trim())

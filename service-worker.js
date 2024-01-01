@@ -73,6 +73,7 @@
     merge(head, local_head);
   }
   chrome.runtime.onMessage.addListener(
+    // listens for msg to close port
     function(request, sender, sendResponse) {
       if (request.msg == "all links sent") {
         sendResponse({ resp: "ok" });

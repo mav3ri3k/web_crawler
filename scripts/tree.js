@@ -8,6 +8,8 @@ export class TreeNode {
 }
 
 function bfs(head, name) {
+  // seraches for node.value of given name in breadth of given head
+  // returns node if node.value == name or last node
   while (head.sibling != null) {
     if (head.value == name) {
       return head
@@ -36,7 +38,7 @@ export function merge(head, parent) {
 }
 
 export function print_level(head) {
-  // following bfs
+  // print following bfs
   if (head != null) {
     let next_level = [];
     while (head.sibling != null) {
@@ -63,12 +65,15 @@ export function print_level(head) {
 }
 
 function open(item) {
+  // create new chrome tab with given link(item)
   chrome.tabs.create({
     url: item 
   });
 }
 
 export function print_leafs(head, prev) {
+  // prints prev + head.value if last node
+  // or recisrively call function again where, prev += head.value
   if (head != null) {
     print_leafs(head.sibling, prev)
 
